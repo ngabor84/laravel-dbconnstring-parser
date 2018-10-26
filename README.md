@@ -10,7 +10,7 @@ This package allows you to parse database connection string into parts.
 ## Installation
 Require the ngabor84/laravel-dbconnstring-parser package in your composer.json and update your dependencies:
 ```bash
-composer require laravel-dbconnstring-parser
+composer require ngabor84/laravel-dbconnstring-parser
 ```
 
 ## Usage with Laravel
