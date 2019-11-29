@@ -42,6 +42,6 @@ jobs:
         with:
           args: install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
       - name: phpinsights
-        uses: stefanzweifel/laravel-phpinsights-action@v1.0.0
+        uses: stefanzweifel/phpinsights-action@v1.0.0
         with:
           args: -v --min-quality=100 --min-architecture=100 --min-style=100
