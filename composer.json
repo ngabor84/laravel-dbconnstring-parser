@@ -12,17 +12,15 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-        "illuminate/support": "^5.7"
+        "php": "^7.3",
+        "illuminate/support": "^6.6"
     },
     "require-dev": {
-        "laravel/framework": "^5.7",
-        "laravel/lumen-framework": "^5.7",
-        "phpunit/phpunit": "^7.4",
-        "orchestra/testbench": "^3.7",
-        "squizlabs/php_codesniffer": "^3.3",
-        "phpstan/phpstan": "^0.10.5",
-        "slevomat/coding-standard": "^4.8"
+        "laravel/framework": "^6.6",
+        "laravel/lumen-framework": "^6.2",
+        "phpunit/phpunit": "^8.4",
+        "orchestra/testbench": "^4.4",
+        "nunomaduro/phpinsights": "^1.11"
     },
     "autoload": {
         "psr-4": {
@@ -40,12 +38,6 @@
                 "Service\\Database\\ConnectionStringParser\\Providers\\ServiceProvider"
             ]
         }
-    },
-    "scripts": {
-        "analyze": "./vendor/bin/phpstan analyze -l 5 src/",
-        "check-style": "./vendor/bin/phpcs --standard=ruleset.xml -ps --colors src/",
-        "fix-style": "./vendor/bin/phpcbf -p --standard=ruleset.xml src/",
-        "test": "./vendor/bin/phpunit -c phpunit.xml"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
