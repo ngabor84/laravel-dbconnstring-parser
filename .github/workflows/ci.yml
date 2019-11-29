@@ -11,7 +11,7 @@ jobs:
       - name: Setup PHP version
         uses: khs1994-docker/actions-setup-php@master
         with:
-          php_version: 7.3
+          php_version: 7.3.12
           args: |
             mv /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini.default \
                     /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini || true
@@ -31,7 +31,7 @@ jobs:
       - name: Setup PHP version
         uses: khs1994-docker/actions-setup-php@master
         with:
-          php_version: 7.3
+          php_version: 7.3.12
           args: |
             mv /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini.default \
                     /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini || true
