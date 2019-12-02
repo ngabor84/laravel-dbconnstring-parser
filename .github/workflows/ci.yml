@@ -44,4 +44,4 @@ jobs:
       - name: phpinsights
         uses: stefanzweifel/phpinsights-action@v1.0.0
         with:
-          args: -v --min-quality=100 --min-architecture=100 --min-style=100
+          args: -v --config-path=insights.php --min-quality=100 --min-architecture=100 --min-style=100
