@@ -5,24 +5,32 @@ on:
       - master
 jobs:
   test:
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions: [ '7.3', '7.4', '8.0' ]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Setup PHP version
-        uses: khs1994-docker/actions-setup-php@master
+        uses: shivammathur/setup-php@v2
         with:
-          php_version: 7.3.12
-          args: |
-            mv /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini.default \
-                    /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini || true
-            set -x
-            php -v
-      - name: composer install
-        uses: MilesChou/composer-action@master
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, dom, fileinfo
+          coverage: xdebug #optional
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
         with:
-          args: install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-      - name: phpunit
-        uses: nathanheffley/laravel-phpunit-action@master
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+      - name: Test with phpunit
+        run: vendor/bin/phpunit --coverage-text
 
   analyze:
     runs-on: ubuntu-latest
