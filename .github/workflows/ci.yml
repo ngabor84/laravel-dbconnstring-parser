@@ -5,13 +5,19 @@ on:
       - master
 jobs:
   test:
+    matrix:
+      php_version:
+        - nightly
+        - 8.0.3
+        - 7.4.16
+        - 7.3.27
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP version
         uses: khs1994-docker/actions-setup-php@master
         with:
-          php_version: 7.3.12
+          php_version: ${{ matrix.php_version }}
           args: |
             mv /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini.default \
                     /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini || true
