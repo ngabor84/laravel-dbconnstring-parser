@@ -20,7 +20,7 @@
         "laravel/lumen-framework": "^8.0",
         "phpunit/phpunit": "^9.3",
         "orchestra/testbench": "^v6.0",
-        "nunomaduro/phpinsights": "dev-master"
+        "nunomaduro/phpinsights": "^v1.14|dev-master"
     },
     "autoload": {
         "psr-4": {
