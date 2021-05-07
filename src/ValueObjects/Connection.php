@@ -4,11 +4,29 @@ namespace Service\Database\ConnectionStringParser\ValueObjects;
 
 class Connection
 {
+    /**
+     * @var string
+     */
     private $scheme;
+    /**
+     * @var string
+     */
     private $username;
+    /**
+     * @var string
+     */
     private $password;
+    /**
+     * @var string
+     */
     private $host;
+    /**
+     * @var int
+     */
     private $port;
+    /**
+     * @var string
+     */
     private $database;
 
     public function __construct()
