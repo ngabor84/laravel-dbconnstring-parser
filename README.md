@@ -1,4 +1,3 @@
-[ ![Codeship Status for ngabor84/laravel-dbconnstring-parser](https://app.codeship.com/projects/346c40b0-bb1a-0136-f167-06d892cdb3f2/status?branch=master)](https://app.codeship.com/projects/312558)
 [![GitHub license](https://img.shields.io/github/license/ngabor84/laravel-dbconnstring-parser.svg)](https://github.com/ngabor84/laravel-dbconnstring-parser/blob/master/LICENSE)
 
 # Database Connection String Parser
