@@ -39,7 +39,7 @@ jobs:
       - name: Setup PHP version
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: 7.3.12
           extensions: mbstring, dom, fileinfo
           coverage: xdebug #optional
       - name: Get composer cache directory
