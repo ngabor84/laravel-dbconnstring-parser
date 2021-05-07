@@ -19,10 +19,10 @@ sh: ## Open a shell in the container
 	@$(run_docker) /bin/sh
 
 check: ## Run PHP Insights
-	@$(run_docker) ./vendor/bin/phpinsights --config-path=insights.php --no-interaction --min-quality=100 --min-architecture=100 --min-style=100
+	@$(run_docker) ./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=2G
 
 check-native: ## Run PHP Insights without Docker
-	./vendor/bin/phpinsights --config-path=insights.php --no-interaction --min-quality=100 --min-architecture=100 --min-style=100
+	./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=2G
 
 test: ## Run tests
 	@$(run_docker) ./vendor/bin/phpunit -c phpunit.xml
