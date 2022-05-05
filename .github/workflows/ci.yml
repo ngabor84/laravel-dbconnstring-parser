@@ -54,8 +54,4 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
       - name: larastan
-        uses: actions-x/phpstan@v1
-        with:
-          phpstanVersion: ^1.6
-          configPath: phpstan.neon
-          arguments:  --memory-limit=2G
+        run: ./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=2G
