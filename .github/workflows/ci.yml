@@ -56,6 +56,6 @@ jobs:
       - name: larastan
         uses: actions-x/phpstan@v1
         with:
-          phpstanVersion: ^0.12
+          phpstanVersion: ^1.6
           configPath: phpstan.neon
           arguments:  --memory-limit=2G
