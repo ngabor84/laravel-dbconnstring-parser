@@ -8,8 +8,7 @@ use Service\Database\ConnectionStringParser\ValueObjects\Connection;
 
 class ConnectionStringParserTest extends BaseTestCase
 {
-    /** @var ConnectionStringParser */
-    protected $parser;
+    protected ConnectionStringParser $parser;
 
     public function setUp(): void
     {
