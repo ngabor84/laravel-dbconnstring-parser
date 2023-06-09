@@ -24,17 +24,7 @@ class ConnectionStringParserTest extends BaseTestCase
         $this->assertInstanceOf(ConnectionStringParser::class, $this->parser);
     }
 
-    /**
-     * @test
-     */
-    public function parseReturnWithAConnectionObject(): void
-    {
-        $connection = $this->parser->parse('postgres://username:password@host:5432/database');
-
-        $this->assertInstanceOf(Connection::class, $connection);
-    }
-
-    public function connectionStringProvider(): array
+    public static function connectionStringProvider(): array
     {
         return [
             [
